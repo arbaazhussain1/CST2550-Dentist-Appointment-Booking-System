@@ -1,5 +1,5 @@
 #include "AppointmentManager.h"
-#include "DateTimeUtils.h" // Ensure this is included for parseDateTime
+#include "DateTimeUtils.h"
 
 void AppointmentManager::populateAppointmentsFromCSV(const std::string& filename, std::vector<Appointment>& appointments) {
     CSVSearcher searcher;
@@ -13,7 +13,7 @@ void AppointmentManager::populateAppointmentsFromCSV(const std::string& filename
         std::string timeStr = lineData[3];
         std::string dateStr = lineData[4];
         
-        auto appointmentTime = parseDateTime(timeStr, dateStr); // Assuming parseDateTime is static
+        auto appointmentTime = parseDateTime(timeStr, dateStr);
         Dentist* dentist = dentistManager.findOrCreateDentist(dentistName);
 
         appointments.emplace_back(room, appointmentTime, dentist);

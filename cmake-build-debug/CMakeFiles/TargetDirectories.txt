@@ -1,3 +1,5 @@
-/Users/arbaazhussain/University/CST2550-Dentist-Appointment-Booking-System/cmake-build-debug/CMakeFiles/Test.dir
+/Users/arbaazhussain/University/CST2550-Dentist-Appointment-Booking-System/cmake-build-debug/CMakeFiles/Dentist_Programme.dir
+/Users/arbaazhussain/University/CST2550-Dentist-Appointment-Booking-System/cmake-build-debug/CMakeFiles/Quicksort_Test.dir
+/Users/arbaazhussain/University/CST2550-Dentist-Appointment-Booking-System/cmake-build-debug/CMakeFiles/Testing_Programme.dir
 /Users/arbaazhussain/University/CST2550-Dentist-Appointment-Booking-System/cmake-build-debug/CMakeFiles/edit_cache.dir
 /Users/arbaazhussain/University/CST2550-Dentist-Appointment-Booking-System/cmake-build-debug/CMakeFiles/rebuild_cache.dir

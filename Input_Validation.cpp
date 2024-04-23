@@ -12,7 +12,7 @@ bool isIntegerString(const std::string& input) {
   
   bool result = true;
   
-  if (input[0] == '-') {
+  if (input[0] == '-' && input.length() > 1) {
     for (unsigned short int i = 1; i < input.length(); i++) {
       if (!isdigit(input[i])) {
 	result = false;

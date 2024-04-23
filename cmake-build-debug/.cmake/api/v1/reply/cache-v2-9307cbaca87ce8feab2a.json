@@ -819,7 +819,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "Test"
+			"value" : "Run"
 		},
 		{
 			"name" : "CMAKE_RANLIB",
@@ -1118,7 +1118,7 @@
 			"value" : "FALSE"
 		},
 		{
-			"name" : "Test_BINARY_DIR",
+			"name" : "Run_BINARY_DIR",
 			"properties" : 
 			[
 				{
@@ -1130,7 +1130,7 @@
 			"value" : "/Users/arbaazhussain/University/CST2550-Dentist-Appointment-Booking-System/cmake-build-debug"
 		},
 		{
-			"name" : "Test_IS_TOP_LEVEL",
+			"name" : "Run_IS_TOP_LEVEL",
 			"properties" : 
 			[
 				{
@@ -1142,7 +1142,7 @@
 			"value" : "ON"
 		},
 		{
-			"name" : "Test_SOURCE_DIR",
+			"name" : "Run_SOURCE_DIR",
 			"properties" : 
 			[
 				{

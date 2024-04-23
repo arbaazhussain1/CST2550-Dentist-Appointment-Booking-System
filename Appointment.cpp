@@ -2,7 +2,11 @@
 
 //Setter methods.
 
-void Appointment::setRoom(int newRoom) {
+void Appointment::setID(int ID) {
+  appointmentID = ID;
+}
+
+void Appointment::setRoom(Room* newRoom) {
   room = newRoom;
 }
 
@@ -15,15 +19,17 @@ void Appointment::setDentist(Dentist* newDentist) {
 }
 
 void Appointment::setPatient(Patient* newPatient) {
-    if (isFree) {
-        patient = newPatient;
-        isFree = false;
-    }
+  patient = newPatient;
 }
+
 
 //Getter methods.
 
-int Appointment::getRoom() const {
+int Appointment::getID() const {
+  return appointmentID;
+}
+
+Room* Appointment::getRoom() const {
   return room;
 }
 
