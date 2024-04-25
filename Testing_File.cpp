@@ -13,12 +13,14 @@
 #include "DateTimeUtils.h"
 #include "CSVSearcher.h"
 
-
+// This line defines that Catch2 should generate a main function for the test suite.
+// This macro must be defined once and only once in a single translation unit.
 
 //Declarations.
 
 const auto now = std::chrono::system_clock::now();
 
+// Creating instances of Dentist, Patient, Room, and Appointment for testing purposes.
 Dentist dentist1("Dr.", "Andrew", "Brown", "address1", "email1", 1, 50000);
 Dentist dentist2("Dr.", "Thomas", "Green", "address2", "email2", 2, 30000);
 Dentist dentist3("Dr.", "Peter", "Yeoman", "address3", "email3", 3, 40000);
@@ -41,6 +43,7 @@ Appointment appointment5(5, &room2, now, &dentist2, &patient5);
 
 //Test Cases.
 
+// Testing Dentist class.
 TEST_CASE("dentist1", "[dentist1]")
 {
     REQUIRE(dentist1.getDentistID() == 1);
@@ -75,6 +78,7 @@ TEST_CASE("dentist3", "[dentist3]")
 }
 
 
+// Testing Patient class initialization.
 TEST_CASE("Patient Initialization") {
     SECTION("Patient1 Initialization") {
         REQUIRE(patient1.getPatientID() == 1);
@@ -95,6 +99,7 @@ TEST_CASE("Patient Initialization") {
     }
 }
 
+// Testing Appointment class initialization.
 TEST_CASE("Appointment Initialization") {
     SECTION("Appointment1 Initialization") {
         REQUIRE(appointment1.getID() == 1);
@@ -114,6 +119,8 @@ TEST_CASE("Appointment Initialization") {
 
 
 }
+
+// Testing invalid initialization of Dentist class.
 TEST_CASE("Invalid Dentist Initialization") {
     Dentist invalidDentist("", "", "", "", "", 0, 0);  // Creating a dentist with invalid data
     REQUIRE(invalidDentist.getDentistID() == 0);      // Expected to fail
@@ -121,12 +128,14 @@ TEST_CASE("Invalid Dentist Initialization") {
 
 }
 
+// Testing invalid initialization of Patient class.
 TEST_CASE("Invalid Patient Initialization") {
     Patient invalidPatient("", "", "", "", "", 0);  // Creating a patient with invalid data
     REQUIRE(invalidPatient.getPatientID() == 0);    // Expected to fail
 
 }
 
+// Testing invalid initialization of Appointment class.
 TEST_CASE("Invalid Appointment Initialization") {
     Room invalidRoom(0);  // Creating a room with an invalid ID
     Dentist invalidDentist("", "", "", "", "", 0, 0);
@@ -139,6 +148,7 @@ TEST_CASE("Invalid Appointment Initialization") {
 
 }
 
+// Testing boundary conditions for Dentist salary.
 TEST_CASE("Boundary Conditions for Dentist Salary") {
     REQUIRE(dentist1.getSalary() > 0);   // Ensure salary is positive
     REQUIRE(dentist2.getSalary() > 0);   // Ensure salary is positive
@@ -146,12 +156,14 @@ TEST_CASE("Boundary Conditions for Dentist Salary") {
 
 }
 
+// Testing boundary conditions for Patient ID.
 TEST_CASE("Boundary Conditions for Patient ID") {
     REQUIRE(patient1.getPatientID() > 0);   // Ensure patient ID is positive
     REQUIRE(patient2.getPatientID() > 0);   // Ensure patient ID is positive
 
 }
 
+// Testing boundary conditions for Appointment ID.
 TEST_CASE("Boundary Conditions for Appointment ID") {
     REQUIRE(appointment1.getID() > 0);   // Ensure appointment ID is positive
     REQUIRE(appointment2.getID() > 0);   // Ensure appointment ID is positive
