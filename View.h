@@ -1,15 +1,17 @@
 #ifndef VIEW_H
 #define VIEW_H
 
-#include "Data.h"
+#include "Data.h" // Include necessary header file for Data class
 
 class View {
  private:
   Data* data;
  public:
-  View(Data* d) {
+    // Constructor to initialize with Data object
+    View(Data* d) {
     data = d;
   }
+  // Methods to print various entities
   void printDentists();
   void printPatients();
   void printRooms();
@@ -19,4 +21,4 @@ class View {
   void printAllAppointmentsForDentistAndPatient(int dentistId, int patientId);
 };
 
-#endif
+#endif // VIEW_H

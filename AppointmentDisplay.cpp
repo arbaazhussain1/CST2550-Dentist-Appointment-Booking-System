@@ -1,3 +1,4 @@
+// Include necessary  files
 #include "AppointmentDisplay.h"
 #include <iostream>
 #include <iomanip>
@@ -13,6 +14,7 @@
  */
 void AppointmentDisplay::displayAppointments(const std::vector<Appointment> &appointments)
 {
+    // Print header for the table
     std::cout << "Appointments:\n";
     std::cout << std::left << std::setw(15) << "Date"
               << std::setw(10) << "Time"
@@ -22,13 +24,18 @@ void AppointmentDisplay::displayAppointments(const std::vector<Appointment> &app
               << "\n";
     std::cout << std::string(58, '-') << "\n";
 
+    // Iterate over appointments and display each appointment in a row
     for (const auto &appointment : appointments)
     {
+        // Extract date and time from the appointment
         auto dateTime = appointment.getDate();
         auto timeT = std::chrono::system_clock::to_time_t(dateTime);
+        // Get the dentist's name from the appointment
         std::string dentistName = appointment.getDentist()->getFirstName() + " " + appointment.getDentist()->getSurname();
+        // Determine the availability status of the appointment
         std::string status = appointment.getIsFree() ? "Free" : "Booked";
 
+        // Print each appointment's details in a row
         std::cout << std::left << std::setw(20) << std::put_time(std::localtime(&timeT), "%Y-%m-%d")
                   << std::setw(5) << " " << std::put_time(std::localtime(&timeT), "%H:%M")
                   << std::setw(20) << "     " + dentistName

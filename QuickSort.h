@@ -1,7 +1,7 @@
 #ifndef QUICKSORT_H
 #define QUICKSORT_H
 
-#include "Appointment.h"
+#include "Appointment.h" // Include the header file for Appointment class
 #include <vector>
 
 class QuickSort {

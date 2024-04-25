@@ -10,7 +10,8 @@
 
 class CSV_Reader {
  private:
-  Data* data;
+   // Data members
+    Data* data;
   
   std::ifstream dentistsFile;
   std::ifstream patientsFile;
@@ -31,10 +32,13 @@ class CSV_Reader {
   const std::string defaultPatientsFileName = "patients.csv";
   const std::string defaultRoomsFileName = "rooms.csv";
   const std::string defaultAppointmentsFileName = "appointments.csv";
+
  public:
+    // Constructor
   CSV_Reader(Data* d) {
     data = d;
   }
+  // Member function declarations
   void getLineIgnoringQuotes(std::istream& input, std::string& result);
   void readDentistsFile();
   void readPatientsFile();
@@ -43,4 +47,4 @@ class CSV_Reader {
   void fileSelection();
 };
 
-#endif
+#endif // CSV_READER_H

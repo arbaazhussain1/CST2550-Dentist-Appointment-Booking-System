@@ -1,5 +1,6 @@
-#include "Input_Validation.h"
+#include "Input_Validation.h" // Include the header file defining input validation functions
 
+// Function to check if a string is empty
 bool isEmpty(const std::string& input) {
   if (input == "") {
     return true;
@@ -8,13 +9,15 @@ bool isEmpty(const std::string& input) {
   }
 }
 
+// Function to check if a string represents an integer
 bool isIntegerString(const std::string& input) {
   
   bool result = true;
-  
-  if (input[0] == '-' && input.length() > 1) {
+
+    // Check if the string contains only digits or a negative sign at the beginning
+    if (input[0] == '-' && input.length() > 1) {  // If the first character is '-', start from index 1
     for (unsigned short int i = 1; i < input.length(); i++) {
-      if (!isdigit(input[i])) {
+      if (!isdigit(input[i])) { // If any character is not a digit, it's not an integer
 	result = false;
       }
     }
@@ -26,6 +29,6 @@ bool isIntegerString(const std::string& input) {
     }
   }
   
-  return result;
+  return result;  // If all characters are digits (or '-' for negative integers), it's an integer string
   
 }

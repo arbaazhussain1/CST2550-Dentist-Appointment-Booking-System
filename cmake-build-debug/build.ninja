@@ -157,6 +157,12 @@ build CMakeFiles/Dentist_Programme.dir/DentistManager.cpp.o: CXX_COMPILER__Denti
   OBJECT_DIR = CMakeFiles/Dentist_Programme.dir
   OBJECT_FILE_DIR = CMakeFiles/Dentist_Programme.dir
 
+build CMakeFiles/Dentist_Programme.dir/AppointmentDisplay.cpp.o: CXX_COMPILER__Dentist_Programme_unscanned_Debug /Users/arbaazhussain/University/CST2550-Dentist-Appointment-Booking-System/AppointmentDisplay.cpp || cmake_object_order_depends_target_Dentist_Programme
+  DEP_FILE = CMakeFiles/Dentist_Programme.dir/AppointmentDisplay.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/Dentist_Programme.dir
+  OBJECT_FILE_DIR = CMakeFiles/Dentist_Programme.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Dentist_Programme
@@ -165,7 +171,7 @@ build CMakeFiles/Dentist_Programme.dir/DentistManager.cpp.o: CXX_COMPILER__Denti
 #############################################
 # Link the executable Dentist_Programme
 
-build Dentist_Programme: CXX_EXECUTABLE_LINKER__Dentist_Programme_Debug CMakeFiles/Dentist_Programme.dir/Dentist_Programme.cpp.o CMakeFiles/Dentist_Programme.dir/Person.cpp.o CMakeFiles/Dentist_Programme.dir/Dentist.cpp.o CMakeFiles/Dentist_Programme.dir/Patient.cpp.o CMakeFiles/Dentist_Programme.dir/Appointment.cpp.o CMakeFiles/Dentist_Programme.dir/Room.cpp.o CMakeFiles/Dentist_Programme.dir/Data.cpp.o CMakeFiles/Dentist_Programme.dir/CSV_Reader.cpp.o CMakeFiles/Dentist_Programme.dir/Interface.cpp.o CMakeFiles/Dentist_Programme.dir/View.cpp.o CMakeFiles/Dentist_Programme.dir/Calendar.cpp.o CMakeFiles/Dentist_Programme.dir/Input_Validation.cpp.o CMakeFiles/Dentist_Programme.dir/Book.cpp.o CMakeFiles/Dentist_Programme.dir/QuickSort.cpp.o CMakeFiles/Dentist_Programme.dir/PatientManager.cpp.o CMakeFiles/Dentist_Programme.dir/CSVSearcher.cpp.o CMakeFiles/Dentist_Programme.dir/DateTimeUtils.cpp.o CMakeFiles/Dentist_Programme.dir/DentistManager.cpp.o
+build Dentist_Programme: CXX_EXECUTABLE_LINKER__Dentist_Programme_Debug CMakeFiles/Dentist_Programme.dir/Dentist_Programme.cpp.o CMakeFiles/Dentist_Programme.dir/Person.cpp.o CMakeFiles/Dentist_Programme.dir/Dentist.cpp.o CMakeFiles/Dentist_Programme.dir/Patient.cpp.o CMakeFiles/Dentist_Programme.dir/Appointment.cpp.o CMakeFiles/Dentist_Programme.dir/Room.cpp.o CMakeFiles/Dentist_Programme.dir/Data.cpp.o CMakeFiles/Dentist_Programme.dir/CSV_Reader.cpp.o CMakeFiles/Dentist_Programme.dir/Interface.cpp.o CMakeFiles/Dentist_Programme.dir/View.cpp.o CMakeFiles/Dentist_Programme.dir/Calendar.cpp.o CMakeFiles/Dentist_Programme.dir/Input_Validation.cpp.o CMakeFiles/Dentist_Programme.dir/Book.cpp.o CMakeFiles/Dentist_Programme.dir/QuickSort.cpp.o CMakeFiles/Dentist_Programme.dir/PatientManager.cpp.o CMakeFiles/Dentist_Programme.dir/CSVSearcher.cpp.o CMakeFiles/Dentist_Programme.dir/DateTimeUtils.cpp.o CMakeFiles/Dentist_Programme.dir/DentistManager.cpp.o CMakeFiles/Dentist_Programme.dir/AppointmentDisplay.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk
   OBJECT_DIR = CMakeFiles/Dentist_Programme.dir
   POST_BUILD = :

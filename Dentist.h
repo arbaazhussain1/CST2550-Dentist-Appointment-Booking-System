@@ -3,14 +3,15 @@
 
 #include "Person.h"
 
-class Dentist : public Person
-{
+// The Dentist class inherits from the Person class
+class Dentist : public Person {
 private:
   int dentistID;
   int salary;
 
 public:
-  Dentist(const std::string &t, const std::string &fn, const std::string &sn, const std::string &a, const std::string &e, int ID, int s) : Person(t, fn, sn, a, e)
+    // Constructor with initialization list to initialize Person attributes and set dentist ID and salary
+    Dentist(const std::string &t, const std::string &fn, const std::string &sn, const std::string &a, const std::string &e, int ID, int s) : Person(t, fn, sn, a, e)
   {
     setDentistID(ID);
     setSalary(s);

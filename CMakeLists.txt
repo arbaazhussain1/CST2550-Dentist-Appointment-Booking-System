@@ -12,7 +12,9 @@ set(Dentist_Programme_SOURCES Dentist_Programme.cpp Print_Functions.h Person.cpp
         DateTimeUtils.cpp
         DateTimeUtils.h
         DentistManager.cpp
-        DentistManager.h)
+        DentistManager.h
+        AppointmentDisplay.cpp
+        AppointmentDisplay.cpp)
 set(Quicksort_Test_SOURCES main.cpp Person.cpp Person.h Dentist.cpp Dentist.h Patient.cpp Patient.h Appointment.cpp Appointment.h QuickSort.cpp QuickSort.h )
 set(Testing_Programme_SOURCES Testing_File.cpp catch.hpp Print_Functions.h Person.cpp Person.h Dentist.cpp Dentist.h Patient.cpp Patient.h Appointment.cpp Appointment.h Room.cpp Room.h Data.cpp Data.h)
 

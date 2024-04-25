@@ -15,7 +15,7 @@
 
 int main()
 {
-    // std::vector<Appointment> appointments;
+// std::vector<Appointment> appointments;
 
     // // add dentist and patient instance
     // Dentist drSmith("Dr", "Smith", "Smith", "add", "emai", 101, 50000);
@@ -53,7 +53,7 @@ int main()
     //     switch (choice)
     //     {
     //     case 1:
-	//   //AppointmentDisplay::displayAppointments(appointments);
+    //   //AppointmentDisplay::displayAppointments(appointments);
     //         break;
     //     case 2:
     //     {

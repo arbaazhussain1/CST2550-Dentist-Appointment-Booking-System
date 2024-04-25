@@ -1,13 +1,15 @@
-#include "QuickSort.h"
-#include <iostream>
-#include <iomanip>
-#include <vector>
-#include <algorithm>
+#include "QuickSort.h" // Include the header file for the QuickSort class
+#include <iostream> // Include the header file for input and output operations
+#include <iomanip> // Include the header file for setting manipulators
+#include <vector> // Include the header file for vectors
+#include <algorithm> // Include the header file for algorithms
 
+// Implementation of the method to sort appointments using QuickSort
 void QuickSort::sortAppointments(std::vector<Appointment>& appointments) {
     quicksort(appointments, 0, appointments.size() - 1);
 }
 
+// Utility method to partition the vector for quicksort
 int QuickSort::partition(std::vector<Appointment>& appointments, int low, int high) {
     auto pivot = appointments[high].getDate();
     int i = (low - 1);
@@ -22,6 +24,7 @@ int QuickSort::partition(std::vector<Appointment>& appointments, int low, int hi
     return (i + 1);
 }
 
+// The main quicksort algorithm
 void QuickSort::quicksort(std::vector<Appointment>& appointments, int low, int high) {
     if (low < high) {
         int pi = partition(appointments, low, high);
@@ -30,6 +33,7 @@ void QuickSort::quicksort(std::vector<Appointment>& appointments, int low, int h
     }
 }
 
+// Method to print free appointments
 void QuickSort::printFreeAppointments(const std::vector<Appointment>& appointments) {
     for (const auto& appointment : appointments) {
         if (appointment.getIsFree()) {
@@ -42,6 +46,7 @@ void QuickSort::printFreeAppointments(const std::vector<Appointment>& appointmen
     }
 }
 
+// Method to print all appointments
 void QuickSort::printAppointments(const std::vector<Appointment>& appointments) {
     for (const auto& appointment : appointments) {
         auto time = std::chrono::system_clock::to_time_t(appointment.getDate());

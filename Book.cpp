@@ -1,3 +1,4 @@
+// Include necessary  files
 #include "Book.h"
 #include "Print_Functions.h"
 #include "Input_Validation.h"
@@ -9,12 +10,15 @@
 #include <iomanip>
 #include <sstream>
 
+// Constructor
 Book::Book(Data* data, View* view) : data(data), view(view) {}
 
+// Start the booking process
 void Book::startBookingProcess() {
     selectBookingOption();
 }
 
+// Select new or follow-up appointment
 void Book::selectBookingOption() {
   println("Book new or follow-up appointment? (1 for new, 2 for follow-up)");
   std::cin  >> userInput;
@@ -28,22 +32,25 @@ void Book::selectBookingOption() {
   }
 }
 
+// Select a patient for a new appointment
 void Book::selectPatient() {
   std::string patientInput;
   int patientID;
   bool valid = false;
   std::cout << "Enter patient ID (press 0 to cancel): ";
   std::cin >> patientInput;
-  
-  if (isIntegerString(patientInput)) {
+
+    // Validate input
+    if (isIntegerString(patientInput)) {
     patientID = stoi(patientInput);
     valid = true;
   } else {
     println("Invalid input, try again.");
-    selectPatient();
+    selectPatient(); // Recursive call in case of invalid input
   }
 
-  if (valid) {
+    // Proceed if input is valid
+    if (valid) {
     Patient* patient = data->getPatient(patientID - 1); 
     if (patientID != 0) {
       if (patient != nullptr) {
@@ -59,22 +66,25 @@ void Book::selectPatient() {
   }
 }
 
+// Select a dentist for a new appointment
 void Book::selectDentist(Patient* patient) {
   std::string dentistInput;
   int dentistID;
   bool valid = false;
   std::cout << "Enter dentist ID (press 0 to cancel): ";
   std::cin >> dentistInput;
-  
-  if (isIntegerString(dentistInput)) {
+
+    // Validate input
+    if (isIntegerString(dentistInput)) {
     dentistID = stoi(dentistInput);
     valid = true;
   } else {
     println("Invalid input, try again.");
-    selectDentist(patient);
+    selectDentist(patient); // Recursive call in case of invalid input
   }
 
-  if (valid) {
+    // Proceed if input is valid
+    if (valid) {
     Dentist* dentist = data->getDentist(dentistID - 1);  
     if (dentistID != 0) {
       if (dentist != nullptr) {
@@ -90,11 +100,13 @@ void Book::selectDentist(Patient* patient) {
   }
 }
 
+// Select a follow-up appointment for a patient
 void Book::selectFollowUpAppointmentById(Patient* patient, Dentist* dentist, int originalAppointmentId) {
     std::cout << "Enter new appointment ID for follow-up (press 0 to cancel): ";
     std::string appointmentInput;
     std::cin >> appointmentInput;
 
+    // Cancel if input is 0
     if (appointmentInput == "0") {
         std::cout << "Follow-up booking process cancelled.\n";
         return;
@@ -104,10 +116,11 @@ void Book::selectFollowUpAppointmentById(Patient* patient, Dentist* dentist, int
     auto& appointments = data->getAppointments();
     bool found = false;
 
+    // Find the appointment and book follow-up if available
     for (auto& appointment : appointments) {
         if (appointment.getDentist() == dentist &&
             appointment.getID() == appointmentId &&
-            !appointment.getPatient()) { 
+            !appointment.getPatient()) {  // Ensure appointment is available
             appointment.setPatient(patient);
             appointment.setFollowUp(true); 
             appointment.setOriginalAppointmentId(originalAppointmentId);
@@ -118,12 +131,14 @@ void Book::selectFollowUpAppointmentById(Patient* patient, Dentist* dentist, int
         }
     }
 
+    // Retry if appointment not found or unavailable
     if (!found) {
         std::cout << "Invalid appointment ID or appointment is not available, try again.\n";
         selectFollowUpAppointmentById(patient, dentist, originalAppointmentId); 
     }
 }
 
+// Select an appointment for a new booking
 void Book::selectAppointmentById(Patient* patient, Dentist* dentist) {
   std::cout << "Enter appointment ID (press 0 to cancel): ";
   std::string appointmentInput;
@@ -131,18 +146,21 @@ void Book::selectAppointmentById(Patient* patient, Dentist* dentist) {
   bool valid = false;
   std::cin >> appointmentInput;
 
-  if (isIntegerString(appointmentInput)) {
+    // Validate input
+    if (isIntegerString(appointmentInput)) {
     appointmentId = stoi(appointmentInput);
     valid = true;
   } else {
     println("Invalid input, try again.");
-    selectAppointmentById(patient, dentist);
+    selectAppointmentById(patient, dentist); // Recursive call in case of invalid input
   }
 
-  if (valid) {
+    // Proceed if input is valid
+    if (valid) {
     auto& appointments = data->getAppointments();
     bool found = false;
-  
+
+    // Find the appointment and book if available
     for (auto& appointment : appointments) {
       if (appointment.getDentist() == dentist &&
         appointment.getID() == appointmentId &&
@@ -155,6 +173,7 @@ void Book::selectAppointmentById(Patient* patient, Dentist* dentist) {
       }
     }
 
+    // Retry if appointment not found or unavailable
     if (!found && appointmentId != 0) {
       println("Invalid appointment ID or appointment is not available, try again.");
       selectAppointmentById(patient, dentist);
@@ -164,15 +183,18 @@ void Book::selectAppointmentById(Patient* patient, Dentist* dentist) {
   }
 }
 
+// Start the follow-up booking process
 void Book::startFollowUpBookingProcess() {
     std::cout << "Follow-Up Booking Process\n";
 
+    // Select patient for follow-up
     std::cout << "Select a patient for follow-up:\n";
     view->printPatients();
     std::string patientInput;
     std::cout << "Enter Patient ID (press 0 to cancel): ";
     std::cin >> patientInput;
 
+    // Cancel if input is 0
     if (patientInput == "0") {
         std::cout << "Follow-up booking process cancelled.\n";
         return;
@@ -185,12 +207,14 @@ void Book::startFollowUpBookingProcess() {
         return;
     }
 
+    // Select dentist for follow-up
     std::cout << "Select a dentist for follow-up:\n";
     view->printDentists();
     std::string dentistInput;
     std::cout << "Enter Dentist ID (press 0 to cancel): ";
     std::cin >> dentistInput;
 
+    // Cancel if input is 0
     if (dentistInput == "0") {
         std::cout << "Follow-up booking process cancelled.\n";
         return;
@@ -203,17 +227,21 @@ void Book::startFollowUpBookingProcess() {
         return;
     }
 
+    // Display available appointments for selected patient and dentist
     view->printAllAppointmentsForDentistAndPatient(dentistId, patientId);
 
+    // Select appointment for follow-up
     std::cout << "Enter the ID of the appointment you want to follow up on (press 0 to cancel): ";
     std::string appointmentInput;
     std::cin >> appointmentInput;
 
+    // Cancel if input is 0
     if (appointmentInput == "0") {
         std::cout << "Follow-up booking process cancelled.\n";
         return;
     }
 
+    // Book follow-up appointment
     int appointmentId = stoi(appointmentInput);
     Appointment* originalAppointment = data->getAppointmentById(appointmentId);
     if (!originalAppointment || !originalAppointment->getPatient()) {
@@ -226,7 +254,7 @@ void Book::startFollowUpBookingProcess() {
     selectFollowUpAppointmentById(patient, dentist, appointmentId);
 }
 
-
+// Confirm booking and save to CSV
 void Book::confirmBooking(Appointment* appointment) {
     
   data->saveAppointmentsToCSV("appointments.csv");

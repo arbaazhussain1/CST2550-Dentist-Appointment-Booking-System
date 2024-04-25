@@ -2,10 +2,15 @@
 #include <sstream>
 #include <ctime>
 
+// Function to parse a date and time string into a std::chrono::system_clock::time_point
 std::chrono::system_clock::time_point parseDateTime(const std::string& timeStr, const std::string& dateStr) {
+    // Initialize a std::tm structure to store the parsed date and time values
     std::tm tm = {};
+
+    // Create std::istringstream objects for parsing the date and time strings
     std::istringstream dateStream(dateStr);
     std::istringstream timeStream(timeStr);
+    // Variable to store the delimiter character between date and time components
     char delimiter;
 
     // Parse the date

@@ -1,0 +1,78 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.27"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Run",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Dentist_Programme::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Dentist_Programme-Debug-d920ce6a9429be9efb8f.json",
+					"name" : "Dentist_Programme",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Quicksort_Test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Quicksort_Test-Debug-e7fd3313194dfa294286.json",
+					"name" : "Quicksort_Test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Testing_Programme::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Testing_Programme-Debug-734e2bc4f369970c1bb0.json",
+					"name" : "Testing_Programme",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/arbaazhussain/University/CST2550-Dentist-Appointment-Booking-System/cmake-build-debug",
+		"source" : "/Users/arbaazhussain/University/CST2550-Dentist-Appointment-Booking-System"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

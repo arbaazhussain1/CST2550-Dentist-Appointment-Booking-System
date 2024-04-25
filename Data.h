@@ -1,14 +1,14 @@
 #ifndef DATA_H
 #define DATA_H
 
+// Include necessary files
 #include <vector>
 #include "Dentist.h"
 #include "Patient.h"
 #include "Appointment.h"
 #include "Room.h"
 
-//Prototype classes, to prevent recursive inclusion.
-
+// Prototype classes, to prevent recursive inclusion.
 class Dentist;
 class Patient;
 class Appointment;

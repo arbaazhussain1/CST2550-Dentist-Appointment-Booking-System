@@ -1,28 +1,30 @@
 #ifndef APPOINTMENT_H
 #define APPOINTMENT_H
 
+// Include necessary header files
 #include "Dentist.h"
 #include "Patient.h"
 #include "Room.h"
 #include <chrono>
 
-//Prototype class for 'Room', to prevent recursive inclusion.
-
+// Forward declaration of the Room class to avoid recursive inclusion.
 class Room;
 
+// Class declaration for the Appointment class.
 class Appointment {
  private:
-  int appointmentID;
-  Room* room;
-  std::chrono::system_clock::time_point date;
-  Dentist* dentist;
-  Patient* patient;
-  bool isFree;
-  bool followUp;
-  int originalAppointmentId;
+  int appointmentID; // Unique identifier for the appointment.
+  Room* room; // Pointer to the room where the appointment takes place.
+  std::chrono::system_clock::time_point date; // Date and time of the appointment.
+  Dentist* dentist; // Pointer to the dentist assigned to the appointment.
+  Patient* patient;  // Pointer to the patient assigned to the appointment.
+  bool isFree;   // Flag indicating whether the appointment is available.
+  bool followUp;  // Flag indicating whether the appointment is a follow-up.
+  int originalAppointmentId;  // ID of the original appointment for follow-ups.
   
  public:
-  Appointment(int ID, Room* r, std::chrono::system_clock::time_point dt, Dentist* d) {
+    // Constructors for the Appointment class.
+    Appointment(int ID, Room* r, std::chrono::system_clock::time_point dt, Dentist* d) {
     setID(ID);
     setRoom(r);
     setDate(dt);
@@ -40,7 +42,7 @@ class Appointment {
     isFree = false;
   }
 
-  //Public setter methods.
+  // Public setter methods to assign values to private member variables.
   void setID(int ID);
   void setRoom(Room* newRoom);
   void setDate(std::chrono::system_clock::time_point newDate);
@@ -49,7 +51,7 @@ class Appointment {
   void setFollowUp(bool value) { followUp = value; }
   void setOriginalAppointmentId(int value) { originalAppointmentId = value; }
 
-  //Public getter methods.
+  // Public getter methods to retrieve values of private member variables.
   int getID() const;
   Room* getRoom() const;
   std::chrono::system_clock::time_point getDate() const;

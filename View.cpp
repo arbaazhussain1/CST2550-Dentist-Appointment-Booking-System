@@ -1,11 +1,12 @@
-#include <iostream>
-#include "View.h"
-#include "Print_Functions.h"
-#include <chrono>
-#include <ctime>
-#include <iomanip>
-#include "QuickSort.h" 
+#include <iostream> // Include the header file for input and output operations
+#include "View.h" // Include the header file for the View class
+#include "Print_Functions.h" // Include the header file for print functions
+#include <chrono> // Include the header file for time utilities
+#include <ctime> // Include the header file for C-style time functions
+#include <iomanip>  // Include the header file for setting manipulators
+#include "QuickSort.h"  // Include the header file for the QuickSort class
 
+// Implementation of the method to print dentists
 void View::printDentists() {
   for (unsigned short int i = 0; i < data->getDentists().size(); i++) {
     Dentist* dentist = data->getDentist(i); 
@@ -16,7 +17,7 @@ void View::printDentists() {
   }
 }
 
-
+// Implementation of the method to print patients
 void View::printPatients() {
   for (unsigned short int i = 0; i < data->getPatients().size(); i++) {
     Patient* patient = data->getPatient(i);
@@ -27,7 +28,7 @@ void View::printPatients() {
   }
 }
 
-
+// Implementation of the method to print rooms
 void View::printRooms() {
   for (unsigned short int i = 0; i < data->getRooms().size(); i++) {
     Room* room = data->getRoom(i);  
@@ -37,6 +38,7 @@ void View::printRooms() {
   }
 }
 
+// Implementation of the method to print appointments
 void View::printAppointments() {
     const std::vector<Appointment>& appointments = data->getAppointments();
     for (unsigned short int i = 0; i < appointments.size(); i++) {
@@ -80,6 +82,7 @@ void View::printAppointments() {
     }
 }
 
+// Implementation of the method to print available appointments for a dentist
 void View::printDoctorsAvailableAppointments(int dentistId) {
       const std::vector<Appointment>& appointments = data->getAppointments();
 
@@ -126,6 +129,7 @@ void View::printDoctorsAvailableAppointments(int dentistId) {
         }
     }
 
+// Implementation of the method to print all appointments for a specific dentist and patient
 void View::printAllAppointmentsForDentistAndPatient(int dentistId, int patientId) {
     const std::vector<Appointment>& appointments = data->getAppointments();
     std::cout << "Listing all appointments for Dentist ID " << dentistId << " and Patient ID " << patientId << ":\n";

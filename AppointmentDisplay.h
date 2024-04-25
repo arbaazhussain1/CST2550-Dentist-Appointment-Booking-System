@@ -1,8 +1,8 @@
 #ifndef APPOINTMENTDISPLAY_H
 #define APPOINTMENTDISPLAY_H
 
-#include "Appointment.h"
-#include <vector>
+#include "Appointment.h" // Include the Appointment header file to access the Appointment class
+#include <vector> // Include the vector header file for using std::vector
 
 class AppointmentDisplay {
 public:
