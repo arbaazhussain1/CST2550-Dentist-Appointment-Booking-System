@@ -12,6 +12,7 @@
 #include <fstream>
 #include "DateTimeUtils.h"
 #include "CSVSearcher.h"
+#include "Input_Validation.h"
 
 // This line defines that Catch2 should generate a main function for the test suite.
 // This macro must be defined once and only once in a single translation unit.
@@ -168,4 +169,62 @@ TEST_CASE("Boundary Conditions for Appointment ID") {
     REQUIRE(appointment1.getID() > 0);   // Ensure appointment ID is positive
     REQUIRE(appointment2.getID() > 0);   // Ensure appointment ID is positive
 
+}
+
+// Testing input validation.
+TEST_CASE("Check whether input is empty 1") {
+  REQUIRE(isEmpty("") == true);   // Ensure that input is empty
+}
+
+TEST_CASE("Check whether input is empty 2") {
+  REQUIRE(isEmpty("1") == false);   // Ensure that input is not empty
+}
+
+TEST_CASE("Check whether input is a valid positive number 1") {
+  REQUIRE(isIntegerString("1") == true);   // Ensure that input is positive
+}
+
+TEST_CASE("Check whether input is a valid positive number 2") {
+  REQUIRE(isIntegerString("1A") == false);   // Ensure that input is positive
+}
+
+TEST_CASE("Check whether input is a valid negative number 1") {
+  REQUIRE(isIntegerString("-1") == true);   // Ensure that input is negative
+}
+
+TEST_CASE("Check whether input is a valid negative number 2") {
+  REQUIRE(isIntegerString("1") == false);   // Ensure that input is negative
+}
+
+TEST_CASE("Check whether input is a valid negative number 3") {
+  REQUIRE(isIntegerString("-") == false);   // Ensure that input is negative
+}
+
+// Testing invalid input validation.
+TEST_CASE("Check whether invalid input is empty 1") {
+  REQUIRE(isEmpty("") == false);   // Ensure that input is empty
+}
+
+TEST_CASE("Check whether invalid input is empty 2") {
+  REQUIRE(isEmpty("1") == true);   // Ensure that input is not empty
+}
+
+TEST_CASE("Check whether invalid input is a valid positive number 1") {
+  REQUIRE(isIntegerString("1") == false);   // Ensure that input is positive
+}
+
+TEST_CASE("Check whether invalid input is a valid positive number 2") {
+  REQUIRE(isIntegerString("1A") == true);   // Ensure that input is positive
+}
+
+TEST_CASE("Check whether invalid input is a valid negative number 1") {
+  REQUIRE(isIntegerString("-1") == false);   // Ensure that input is negative
+}
+
+TEST_CASE("Check whether invalid input is a valid negative number 2") {
+  REQUIRE(isIntegerString("1") == true);   // Ensure that input is negative
+}
+
+TEST_CASE("Check whether invalid input is a valid negative number 3") {
+  REQUIRE(isIntegerString("-") == false);   // Ensure that input is negative
 }

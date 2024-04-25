@@ -174,6 +174,8 @@ void CSV_Reader::readAppointmentsFile() {
       data->addAppointment(newAppointment);
     }
 
+    //std::cout << data->getAppointment(0).getDentist()->getFirstName() << std::endl;
+
     // Clear the line for the next iteration
     line = "";
   }

@@ -15,10 +15,7 @@
 
 int main()
 {
-   // Commented-out code: This file is an old testing file and no longer works due to changes in the code.
-   // It has been left in place for documentation purposes only.
-
-    // std::vector<Appointment> appointments;
+// std::vector<Appointment> appointments;
 
     // // add dentist and patient instance
     // Dentist drSmith("Dr", "Smith", "Smith", "add", "emai", 101, 50000);
